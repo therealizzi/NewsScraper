@@ -1,9 +1,10 @@
 var request = require('request');
 var bodyParser = require('body-parser');
-var cheerio = require('cheerio');
+var $ = require('cheerio');
 var express = require('express');
 var mongoose = require('mongoose');
 var hbs = require('express-handlebars');
+var path = require('path');
 
 // Generate the express app
 var app = express();
@@ -25,9 +26,7 @@ app.use('/users', users);
 mongoose.Promise = Promise;
 
 // Connect to Mongo DB
-mongoose.connect("mongodb://localhost/NewsScraper", {
-	useMongoClient: true
-});
+mongoose.connect("mongodb://localhost/NewsScraper");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
