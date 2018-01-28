@@ -1,0 +1,63 @@
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">The Best Scraper</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form action='/scrape' method='get' class="navbar-form navbar-right">
+            <button class="btn btn-success">Start Scraping!</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Mostly this just scrapes TechCrunch</h1>
+        <p>(Okay - only TechCrunch)</p>
+        <p><a class="btn btn-primary btn-lg" href="https://techcrunch.com/" role="button">Learn more about TechCrunch»</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      
+    {{#each article}}
+      <div class="row">
+        <div class="col-md">
+            <h2>{{this.title}}</h2>
+            <p>{{this.excerpt}}</p>
+            <form>
+            <p><a class="btn btn-default" href={{this.link}} role="button">View details »</a>
+            <button class="btn btn-warning" name="drop" value="{{this.title}}">Drop!</button>
+            <button class="btn btn-success" name="comment" value="{{this.title}}">Comment!</button>
+            </form>
+        </div>
+    </div>
+    {{/each}}
+
+    <hr>
+    <div>
+      <footer>
+        <p>© 2018 The Scraping Company, Inc.</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  

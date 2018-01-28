@@ -1,0 +1,1 @@
+var Tank = mongoose.model('Tank', yourSchema); var small = new Tank({ size: 'small' }); small.save(function (err) { if (err) return handleError(err); // saved! }) //

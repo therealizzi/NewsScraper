@@ -9,8 +9,8 @@ var cheerio = require('cheerio');
 var router = express.Router();
 
 // Database configuration
-var databaseUrl = "techcrunch";
-var collections = ["startups"];
+var databaseUrl = "ycomb";
+var collections = ["news"];
 
 // Hook mongojs configuration to the db variable
 var db = mongojs(databaseUrl, collections);
@@ -18,44 +18,39 @@ db.on("error", function(error) {
   console.log("Database Error:", error);
 });
 
-router.get("/", function(req, res) {
+router.get("/data", function(req, res) {
 	db.news.find({}, function(error, found){
 		if (error) {
 			console.log(error);
 		}
 		else {
-			var hbsObject = {article: found};
-
-			res.render("jumbotron", hbsObject);
+			res.json(found);
 		}
 	});
 });
 
 router.get("/scrape", function(req, res) {
 
-	request("https://techcrunch.com/startups/", function(err, response, html) {
+	request("https://news.ycombinator.com/news", function(err, response, html) {
 
 		var $ = cheerio.load(html);
 
-		$(".block-content").each(function(i, element) {
+		$(".title a").each(function(i, element) {
 
-			title = $(element).children(".post-title").text();
-			link = $(element).children().children().attr("href");
-			excerpt = $(element).children(".excerpt").text();
+			title = $(element).text();
+			link = $(element).attr("href");
 
 			if (title) {
 				db.news.insert({
 					title: title,
-					excerpt: excerpt,
 					link: link
 				},
 				function(err, inserted) {
 					if (err) {
-						console.log(err);
+						console.log(err)
 					}
 					else {
-						console.log(inserted);
-						res.redirect('/');
+						console.log(inserted)
 					}
 				})
 			}

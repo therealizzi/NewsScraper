@@ -1,32 +1,38 @@
 var request = require('request');
 var bodyParser = require('body-parser');
-var $ = require('cheerio');
+var cheerio = require('cheerio');
 var express = require('express');
 var mongoose = require('mongoose');
 var hbs = require('express-handlebars');
 var path = require('path');
+var fs = require('fs');
 
 // Generate the express app
 var app = express();
 
-// Require databases
-var db = require("./models");
-
+// Designate PORT
 var PORT = 3000;
+
+fs.readdirSync(__dirname + '/models').forEach(function(filename){
+  if (~filename.indexOf('.fs')) require(__dirname + '/models/' + filename)
+});
 
 // Require server routes
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+// Require all models
+// var db = require("./models");
+
 // Assigning routes
 app.use('/', index);
-app.use('/users', users);
+app.use('/', users);
 
 // Setting mongoose to use promises for async queries (.then syntex)
 mongoose.Promise = Promise;
 
 // Connect to Mongo DB
-mongoose.connect("mongodb://localhost/NewsScraper");
+mongoose.connect("mongodb://localhost/scrape");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
