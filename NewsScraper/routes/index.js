@@ -18,19 +18,6 @@ db.on("error", function(error) {
   console.log("Database Error:", error);
 });
 
-router.get("/", function(req, res) {
-	db.news.find({}, function(error, found){
-		if (error) {
-			console.log(error);
-		}
-		else {
-			var hbsObject = {article: found};
-
-			res.render("jumbotron", hbsObject);
-		}
-	});
-});
-
 router.get("/scrape", function(req, res) {
 
 	request("https://techcrunch.com/startups/", function(err, response, html) {
@@ -52,14 +39,42 @@ router.get("/scrape", function(req, res) {
 				function(err, inserted) {
 					if (err) {
 						console.log(err);
-					}
-					else {
-						console.log(inserted);
 						res.redirect('/');
 					}
 				})
 			}
 		});
+	res.redirect('/');
+	});
+});
+
+router.get("/", function(req, res) {
+
+	db.news.find({}, function(error, found){
+		if (error) {
+			console.log(error);
+		}
+		else {
+
+			var hbsObject = {article: found};
+
+			res.render("jumbotron", hbsObject);
+		}
+	});
+});
+
+router.get("/delete/:id", function(req, res){
+
+	console.log(req.params.id);
+
+	db.news.remove({'_id': db.ObjectId(req.params.id)}, function(error, found){
+		if (error) {
+			console.log(error);
+		}
+		else {
+			
+			res.redirect('/')
+		}
 	});
 });
 

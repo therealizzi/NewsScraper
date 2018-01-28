@@ -12,7 +12,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form action='/scrape' method='get' class="navbar-form navbar-right">
-            <button class="btn btn-success">Start Scraping!</button>
+            <button type="submit" class="btn btn-success">Start Scraping!</button>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
@@ -35,10 +35,10 @@
         <div class="col-md">
             <h2>{{this.title}}</h2>
             <p>{{this.excerpt}}</p>
-            <form>
-            <p><a class="btn btn-default" href={{this.link}} role="button">View details »</a>
-            <button class="btn btn-warning" name="drop" value="{{this.title}}">Drop!</button>
-            <button class="btn btn-success" name="comment" value="{{this.title}}">Comment!</button>
+            <form action= method='get'>
+                <p><a class="btn btn-default" href={{this.link}} role="button">View details »</a></p>
+                <a href='/delete/{{this._id}}' class="btn btn-warning" name="drop" value="{{this._id}}">Drop!</a>
+                <a href='/comment/{{this._id}}' class="btn btn-success" name="comment" value="{{this._id}}">Comment!</a>
             </form>
         </div>
     </div>
