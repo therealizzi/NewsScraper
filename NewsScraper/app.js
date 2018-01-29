@@ -18,21 +18,18 @@ fs.readdirSync(__dirname + '/models').forEach(function(filename){
 });
 
 // Require server routes
-var index = require('./routes/index');
-var users = require('./routes/users');
-
-// Require all models
-var db = require("./models");
+var routes = require('./routes/routes.js');
 
 // Assigning routes
-app.use('/', index);
-app.use('/', users);
+app.use('/', routes);
 
-// Setting mongoose to use promises for async queries (.then syntex)
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
 mongoose.Promise = Promise;
-
-// Connect to Mongo DB
-mongoose.connect("mongodb://localhost/scrape");
+mongoose.connect(MONGODB_URI);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

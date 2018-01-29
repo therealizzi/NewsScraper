@@ -1,4 +1,4 @@
-var mongoose = require("mongoose");
+var mongoose = require('mongoose');
 
 // Save a reference to the Schema constructor
 var Schema = mongoose.Schema;
@@ -35,7 +35,7 @@ var articleSchema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var article = mongoose.model("article", articleSchema);
+var Article = mongoose.model("Article", articleSchema);
 
 // Export the Article model
-module.exports = article;
+module.exports = Article;
