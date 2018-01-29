@@ -1,7 +1,7 @@
 # NewsScraper
 <br>
 <strong>Overview</strong>
-<br>This scraping application allows a user to pull the latest articles from TechCrunch; review, comment, favorite or delete an article.
+<br><br>This scraping application allows a user to pull the latest articles from TechCrunch; review, comment, favorite or delete an article.
 
 <hr><strong>Purpose</strong>
 <br><br>To gain experience with the following tools, frameworks and packages:
@@ -22,6 +22,6 @@
 
 <hr><strong>Developers</strong>
 
-<br><strong>Lead: </strong>Israel Peck
+<br><strong>Lead: </strong>Israel Peck https://github.com/therealizzi
 <br><strong>Consult: </strong>Peter Peck https://github.com/ptpeck357
 <br><strong>Consult: </strong>Andrew Damico https://github.com/AndrewD14
