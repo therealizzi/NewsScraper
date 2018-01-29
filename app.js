@@ -24,7 +24,7 @@ var routes = require('./routes/routes.js');
 app.use('/', routes);
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://therealizzi:tyu890@ds119078.mlab.com:19078/techcrunch";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/techcrunch";
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
@@ -32,8 +32,8 @@ mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+app.engine("handlebars", hbs({ defaultLayout: "main" }));
+app.set("view engine", "hbs");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

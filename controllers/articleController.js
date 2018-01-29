@@ -60,7 +60,7 @@ exports.newScrape = function(req, res, next) {
 		});
 	res.redirect('/');
 	});
-};	
+};
 
 exports.delete = function(req, res, next) {
 	console.log("delete this!");
