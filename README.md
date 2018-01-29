@@ -8,8 +8,9 @@
 <hr><strong>Purpose</strong>
 <br><br>To gain experience with the following tools, frameworks and packages:
 <br><strong>Sublime Text</strong>
-<br><strong>MVC Framework</strong>
 <br><strong>Github</strong>
+<br><strong>NodeJS</strong>
+<br><strong>MVC Framework</strong>
 <br><strong>Heroku</strong>
 <br><strong>mLab</strong>
 <br><strong>MongoDB</strong>
