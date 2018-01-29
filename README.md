@@ -1,7 +1,7 @@
 # NewsScraper
 <br>
 <strong>Overview</strong>
-<br><br>This scraping application allows a user to pull the latest articles from TechCrunch; review, comment, favorite or delete an article.
+<br><br>This scraping application allows a user to pull the latest articles from TechCrunch, review, comment, favorite or delete an article, and re-scrape for new articles (without duplication).
 <br>
 <br><strong>Live site: </strong>https://tc-news-scraper.herokuapp.com/
 
