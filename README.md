@@ -2,6 +2,8 @@
 <br>
 <strong>Overview</strong>
 <br><br>This scraping application allows a user to pull the latest articles from TechCrunch; review, comment, favorite or delete an article.
+<br>
+<br><strong>Live: </strong>https://tc-news-scraper.herokuapp.com/
 
 <hr><strong>Purpose</strong>
 <br><br>To gain experience with the following tools, frameworks and packages:
