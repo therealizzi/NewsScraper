@@ -19,3 +19,9 @@
 <br>- request
 <br>- cheerio
 <br>- fs
+
+<hr><strong>Developers</strong>
+
+<br><strong>Lead: </strong>Israel Peck
+<br><strong>Consult: </strong>Peter Peck https://github.com/ptpeck357
+<br><strong>Consult: </strong>Andrew Damico https://github.com/AndrewD14
