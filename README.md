@@ -8,7 +8,6 @@
 <br><strong>Sublime Text</strong>
 <br><strong>MVC Framework</strong>
 <br><strong>Github</strong>
-<br><strong>MongoDB</strong>
 <br><strong>Heroku</strong>
 <br><strong>mLab</strong>
 <br><strong>MongoDB</strong>
