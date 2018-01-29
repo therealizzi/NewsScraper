@@ -12,6 +12,8 @@ var router = express.Router();
 var databaseUrl = "techcrunch";
 var collections = ["startups"];
 
+var models = require("./../models");
+
 // Hook mongojs configuration to the db variable
 var db = mongojs(databaseUrl, collections);
 db.on("error", function(error) {

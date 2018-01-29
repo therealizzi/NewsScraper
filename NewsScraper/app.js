@@ -22,7 +22,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 // Require all models
-// var db = require("./models");
+var db = require("./models");
 
 // Assigning routes
 app.use('/', index);
