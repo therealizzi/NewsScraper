@@ -1,10 +1,10 @@
 # NewsScraper
-
+<br>
 <strong>Overview</strong>
-This scraping application allows a user to pull the latest articles from TechCrunch; review, comment, favorite or delete an article.
+<br>This scraping application allows a user to pull the latest articles from TechCrunch; review, comment, favorite or delete an article.
 
 <hr><strong>Purpose</strong>
-To gain experience with the following tools, frameworks and packages:
+<br>To gain experience with the following tools, frameworks and packages:
 <br><strong>Sublime Text</strong>
 <br><strong>MVC Framework</strong>
 <br><strong>Github</strong>
