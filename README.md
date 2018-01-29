@@ -3,7 +3,7 @@
 <strong>Overview</strong>
 <br><br>This scraping application allows a user to pull the latest articles from TechCrunch; review, comment, favorite or delete an article.
 <br>
-<br><strong>Live: </strong>https://tc-news-scraper.herokuapp.com/
+<br><strong>Live site: </strong>https://tc-news-scraper.herokuapp.com/
 
 <hr><strong>Purpose</strong>
 <br><br>To gain experience with the following tools, frameworks and packages:
@@ -13,6 +13,7 @@
 <br><strong>Heroku</strong>
 <br><strong>mLab</strong>
 <br><strong>MongoDB</strong>
+<br><strong>Robo 3T</strong>
 <br><br><strong>NPM Packages:</strong>
 <br>- express
 <br>- mongoose
