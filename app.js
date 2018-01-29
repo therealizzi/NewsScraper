@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var cheerio = require('cheerio');
 var express = require('express');
 var mongoose = require('mongoose');
-var hbs = require('express-handlebars');
+var handlebars = require('express-handlebars');
 var path = require('path');
 var fs = require('fs');
 
@@ -32,8 +32,8 @@ mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 
 // view engine setup
-app.engine("handlebars", hbs({ defaultLayout: "main" }));
-app.set("view engine", "hbs");
+app.engine("handlebars", handlebars({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
