@@ -11,7 +11,7 @@ var fs = require('fs');
 var app = express();
 
 // Designate PORT
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 fs.readdirSync(__dirname + '/models').forEach(function(filename){
   if (~filename.indexOf('.fs')) require(__dirname + '/models/' + filename)
@@ -24,7 +24,7 @@ var routes = require('./routes/routes.js');
 app.use('/', routes);
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/techcrunch";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://therealizzi:tyu890@ds119078.mlab.com:19078/techcrunch";
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
