@@ -65,13 +65,13 @@ exports.newScrape = function(req, res, next) {
 exports.delete = function(req, res, next) {
 	console.log("delete this!");
 
-	models.Article.remove({'_id': req.params.id}), function (err, found) {
+	models.Article.findOneAndRemove({_id: req.params.id}, function (err, found) {
+			console.log("delete this works!")
 		if (err) {	
 			return handleError (err);
 		} 
 		else {
-			console.log("delete this works!")
 			res.redirect('/');
 		}
-	}
+	});
 };
